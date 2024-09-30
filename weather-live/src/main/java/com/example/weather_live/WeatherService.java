@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
+@Service
 public class WeatherService {
 
     @Value("${e56eb45753eaff6735d7786c68312c36}")
     private String openWeatherApiKey;
 
-    private static final String OPENWEATHER_URL = 
-        "https://api.openweathermap.org/data/2.5/weather?q={city}&appid={e56eb45753eaff6735d7786c68312c36}&units=metric";
+    private static final String OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?q={city}&appid={e56eb45753eaff6735d7786c68312c36}&units=metric";
 
     public String getWeather(String city) {
 
